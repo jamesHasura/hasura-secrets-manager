@@ -6,7 +6,6 @@ const axios = require('axios');
 // Setup node k8s client
 const kc = new k8s.KubeConfig();
 kc.loadFromDefault();
-const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
 const k8sApiAppsV1 = kc.makeApiClient(k8s.AppsV1Api);
 const options = {
   headers: { 'Content-type': k8s.PatchUtils.PATCH_FORMAT_JSON_PATCH },
@@ -24,11 +23,11 @@ async function restartDeployment() {
       {
         op: 'replace',
         path: '/spec/template/spec/containers/0/env/2/value',
-        value: data['username'].toString(),
+        value: data[TO_CHANGE].toString(), // change the value of the env variable
       },
     ];
     const patchRes = await k8sApiAppsV1.patchNamespacedDeployment(
-      'nginx-deployment',
+      'hasura-deployment',
       'default',
       patchDeploymentSpec,
       undefined,
