@@ -2,7 +2,7 @@
 
 ### Description 
 
-This project creates a hasura zero downtime deployment for scenarios when there is a rotating credential that expires after a certain duration and needs to be refreshed & reloaded into hasura from AWS Secrets Manager.
+This project creates a hasura zero downtime deployment for scenarios when there are rotating AWS Secrets Manager credential(s) that expire after a certain duration and need to be reloaded injected into HGE.
 
 ### Requirements 
 
