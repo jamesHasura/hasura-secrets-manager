@@ -22,8 +22,10 @@ This project creates a hasura zero downtime deployment for scenarios when there 
 
 ### Step 1: Edit and build the DockerFile
 
-- Edit the refresh-credential.js file for your use case 
- 
+- Edit the refresh-credential.js file for your use case
+  
+   **`Example: you'll likely want to change patchDeploymentSpec and patchRes within the restartDeployment function.`**
+
 - Build the Dockerfile in the Docker directory /Docker/Dockerfile using the tag 'secret-refresh-pod'
  
  **`Example: Docker build -t 'secret-refresh-pod'`**
