@@ -18,10 +18,20 @@ This project creates a hasura zero downtime deployment for scenarios when there 
   - [Install the Secrets Manager and Config Provider](https://github.com/aws/secrets-store-csi-driver-provider-aws)
   
 
-### How to Run? 
+## How to Run?
 
+### Step 1: Edit and build the DockerFile
 
-1.) In the Dockerfile directory /Docker/Dockerfile, build the Dockerfile using the tag 'secret-refresh-pod'
+- Edit the refresh-credential.js file for your use case 
+ 
+- Build the Dockerfile in the Docker directory /Docker/Dockerfile using the tag 'secret-refresh-pod'
+ 
+ **`Example: Docker build -t 'secret-refresh-pod'`**
 
-   **`Example: Docker build -t 'secret-refresh-pod'`**
+### Step 2: Edit the k8s Deployment File
 
+Edit the ENV variables in the K8s deployment file located at /test.
+
+### Step 3: Run the K8s files in /test
+
+6. **`kubectl apply -f deployment_svc.yaml`**
