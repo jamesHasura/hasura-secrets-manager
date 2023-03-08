@@ -34,4 +34,4 @@ Edit the ENV variables in the K8s deployment file located at /test.
 
 ### Step 3: Run the K8s files in /test
 
-6. **`kubectl apply -f deployment_svc.yaml`**
+**`kubectl apply -f deployment_svc.yaml`**
