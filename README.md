@@ -22,20 +22,18 @@ This project creates a hasura zero downtime deployment for scenarios when there 
 
 - Create an .env folder with the following variables:
 
-  \*\*
-
   - DEPLOYMENT_NAMESPACE=default
   - DEPLOYMENT_NAME=hasura-deployment
   - SECRETS_STORE_PATH=./secrets-store
-  - DELAY_RESTART=10000`\*\*
+  - DELAY_RESTART=10000
 
 - Build the Dockerfile in the Docker directory /Docker/Dockerfile using the tag 'secret-refresh-pod'
 
   **`Example: Docker build -t 'secret-refresh-pod'`**
 
-### Step 2: Edit the k8s Deployment File
+### Step 2: create an env folder in the /k8s directory
 
-Edit the ENV variables in the K8s deployment file located at /test.
+**`AWS_ROLE_ARN=xxxx`**
 
 ### Step 3: Run the K8s files in /k8s
 
