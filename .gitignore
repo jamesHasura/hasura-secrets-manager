@@ -1,0 +1,6 @@
+*/node_modules
+/base
+/cluster-config
+.env
+*/.env
+/test
